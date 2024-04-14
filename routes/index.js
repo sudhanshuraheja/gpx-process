@@ -107,8 +107,8 @@ exports.index = () => {
   fs.readFile("public/run.gpx", "utf8", (err, data) => {
     if (err) console.log(err);
     else {
-      parseString(data, (err, result) => {
-        if (err) console.log(err);
+      parseString(data, (parseErr, result) => {
+        if (parseErr) console.log(parseErr);
         else processData(result);
       });
     }
